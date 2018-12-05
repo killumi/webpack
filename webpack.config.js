@@ -1,7 +1,13 @@
+const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
 	mode: 'development',
 	devtool: 'source-map',
+	entry: { main: './src/index.js' },
+  output: {
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'main.js'
+  },
 	module: {
 		rules: [
 			{
@@ -13,6 +19,14 @@ module.exports = {
 						presets: ['@babel/preset-env']
 					}
 				}
+			},
+			{
+				test: /\.sass$/,
+				use: [
+					'style-loader',
+					'css-loader',
+					'sass-loader'
+				]
 			}
 		]
 	},
@@ -20,6 +34,6 @@ module.exports = {
 		contentBase: './dist'
 	},
 	plugins: [
-    new HtmlWebpackPlugin({template: './index.html'})
+		new HtmlWebpackPlugin({template: './index.html'}),
   ],
 }

@@ -3,3 +3,5 @@ const hello = name => console.log(`hello ${name}`);
 
 hello('World');
 consoleL('lol');
+
+import './sass/app.sass'
