@@ -1,7 +1,14 @@
-import { consoleL } from "./module";
-const hello = name => console.log(`hello ${name}`);
+import $ from 'jquery';
+import {scrollToId} from "./module";
 
-hello('World');
-consoleL('lol');
+$(function initScroll(){
+	$('.js-scroll').on('click', function(){
+		let scrollBlock = $(this).attr('href');
+		let scrollBlockOffset = $(scrollBlock).offset().top;
+		let animationDuration = +$(this).attr('data-duration');
+
+		new scrollToId(scrollBlockOffset, animationDuration);
+	});
+});
 
 import './sass/app.sass'
