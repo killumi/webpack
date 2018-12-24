@@ -1,5 +1,6 @@
 export class Slider {
-	constructor(){
+	constructor(sliderId = null){
+		this.sliderId = sliderId;
 		this.currentIndex = 0;
 		this.prevButton = null;
 		this.nextButton = null;
@@ -18,22 +19,24 @@ export class Slider {
 		this.sliderImagesUrl.push('https://ok-inform.ru/images/2016/october/obshestvo/Blackcat.jpg');
 
 		// присваеваем значения переменным
-		this.prevButton = document.querySelectorAll('.js-prev');
-		this.nextButton = document.querySelectorAll('.js-next');
-		this.sliderImage = document.querySelectorAll('.js-slider-image');
+		let slider = document.querySelector('#' + this.sliderId);
+
+		this.prevButton = slider.querySelector('.js-prev');
+		this.nextButton = slider.querySelector('.js-next');
+		this.sliderImage = slider.querySelector('.js-slider-image');
 
 		// выставляем стартовое значение для слайдера
-		this.sliderImage[0].src = this.sliderImagesUrl[this.currentIndex];
+		this.sliderImage.src = this.sliderImagesUrl[this.currentIndex];
 
-		// подписываемся на событие click для prev and next buttons
-		this.prevButton[0].addEventListener('click', () => {
+		// подписываемся на событие click для кнопок prev и next
+		this.prevButton.addEventListener('click', () => {
 			this.prev();
-			this.sliderImage[0].src = this.sliderImagesUrl[this.currentIndex]; // показываем предыдущий слайд
+			this.sliderImage.src = this.sliderImagesUrl[this.currentIndex]; // показываем предыдущий слайд
 		});
 
-		this.nextButton[0].addEventListener('click', () => {
+		this.nextButton.addEventListener('click', () => {
 			this.next();
-			this.sliderImage[0].src = this.sliderImagesUrl[this.currentIndex]; // показываем следующий слайд
+			this.sliderImage.src = this.sliderImagesUrl[this.currentIndex]; // показываем следующий слайд
 		});
 	}
 
@@ -54,4 +57,5 @@ export class Slider {
 	}
 }
 
-let slider = new Slider();
+let slider = new Slider('slider1');
+let slider2 = new Slider('slider2');
