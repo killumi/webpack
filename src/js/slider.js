@@ -18,7 +18,7 @@ export class Slider {
 		this.sliderImagesUrl.push('http://investgo24.com/img/project/14713/images/600x450/caracal_kittens.jpg');
 		this.sliderImagesUrl.push('https://ok-inform.ru/images/2016/october/obshestvo/Blackcat.jpg');
 
-		// присваеваем значения переменным
+		// присваиваем значения переменным
 		let slider = document.querySelector('#' + this.sliderId);
 
 		this.prevButton = slider.querySelector('.js-prev');
