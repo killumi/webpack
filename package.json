@@ -28,9 +28,12 @@
     "http-server": "^0.11.1",
     "jquery": "^3.3.1",
     "node-sass": "^4.10.0",
+    "raw-loader": "^1.0.0",
     "sass-convert": "^0.5.2",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",
+    "twig-html-loader": "^0.1.2",
+    "twig-loader": "^0.4.1",
     "webpack": "^4.26.1",
     "webpack-cli": "^3.1.2",
     "webpack-dev-server": "^3.1.10"
