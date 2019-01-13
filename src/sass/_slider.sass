@@ -2,6 +2,25 @@
 	color: $red
 	background-color: #000
 	position: relative
+	&__dots
+		list-style-type: none
+		position: absolute
+		left: 0
+		bottom: 30px
+		width: 100%
+		display: flex
+		align-items: center
+		justify-content: center
+		margin: 0
+		padding: 0
+	&-dot
+		height: 10px
+		width: 10px
+		background-color: rgba(#fff, .5)
+		margin: 0 10px
+		border-radius: 50%
+		&.active
+			background-color: rgba(#fff, 1)
 	&:hover
 		.slider__slide-overlay
 			opacity: 0
