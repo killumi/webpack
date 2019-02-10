@@ -1,8 +1,7 @@
 import $ from 'jquery';
 import {scrollToId} from "./module";
 import {Slider} from "./slider";
-import {TestsJS} from "./js-test";
-import {clicker} from "./module"
+import {MyObservable} from "./js-test";
 
 $(function initScroll(){
 	$('.js-scroll').on('click', function(){
@@ -14,5 +13,6 @@ $(function initScroll(){
 	});
 });
 
-clicker();
+MyObservable();
+
 import '../sass/app.sass'
